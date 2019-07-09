@@ -32,7 +32,7 @@ pipeline {
  	   } 
  	   stage('Publish Junit Report & Archive') { 
  		   steps { 
- 				archiveArtifacts artifacts: 'project-manager-service/target/*.jar', fingerprint: true 
+ 				archiveArtifacts artifacts: 'target/*.jar', fingerprint: true 
  				junit '**/TEST-*.xml' 
  			        step([$class: 'JacocoPublisher',  
  				      execPattern: '**/*.exec', 
